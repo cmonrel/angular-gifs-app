@@ -3,14 +3,13 @@
   <hr class="text-white">
 
   <div class="list-group list-reset">
-    <button class="list-group-item list-group-item-action justify-content-center text-black"
-      *ngFor="let item of tagsList();
+    <button
+      class="list-group-item list-group-item-action justify-content-center text-black"
+      *ngFor="let item of tagsList;
       let i = index"
+      (click)="searchTag(item)"
     >
-    <div>
-      <span class="text-primary">{{ i + 1 }}. </span>
-      <span>{{ getTag(i) }} </span>
-    </div>
+    {{ item | titlecase }}
     </button>
   </div>
 </div>

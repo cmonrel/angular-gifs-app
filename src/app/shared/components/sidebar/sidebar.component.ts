@@ -10,11 +10,11 @@ export class SidebarComponent {
 
   private _tagsList: string[] = [];
 
-  constructor(private gifsService: GifsService) {
-    this._tagsList = this.gifsService.tagsHistory;
+  constructor(private gifsService: GifsService) {}
+
+  get tagsList():string[] {return this.gifsService.tagsHistory;}
+
+  public searchTag(tag: string):void {
+    this.gifsService.searchTag(tag);
   }
-
-  public tagsList():string[] {return [...this._tagsList];}
-
-  public getTag(i:number):string {return this._tagsList[i];}
 }
